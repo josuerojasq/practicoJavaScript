@@ -40,6 +40,27 @@
                 <p class="main__container--result" id="resultPrice"></p>
             </form>
         </section>
+
+        <section class="main__container">
+            <span class="main__container--title">
+                <img src="./assets/billete-de-descuento.png" alt="">
+                <h2>Calcula el precio a pagar aplicando un cupón</h2>
+            </span>
+            <form class="main__container--form">
+                <span>
+                    <label for="inputPriceCoupon">Precio del     producto ($):</label>
+                    <input class="input" type="number" id="inputPriceCoupon">
+                </span>
+                <span>
+                    <label for="inputCoupon">Cupón de Descuento (🎫):</label>
+                    <input class="input" type="text" id="inputCoupon">
+                </span>
+                <button class="button" type="button"   onclick="onClickButtonPriceCoupon()">
+                    Aplicar Cupón
+                </button>
+                <p class="main__container--result" id="resultPriceCoupon"></p>
+            </form>
+        </section>
     </main>
 
     <script src="descuentos.js"></script>

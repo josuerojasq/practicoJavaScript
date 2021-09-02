@@ -31,8 +31,8 @@ body {
 
 .main {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* flex-direction: column; */
+    justify-content: space-around;
     align-items: center;
     background: linear-gradient(#D5EEBB, #5F7A61);
     padding-top: 2rem;
@@ -48,7 +48,7 @@ body {
     min-height: 18rem;
     padding: 10px 50px 20px;
     width: 32rem;
-    margin: 1rem 1rem;
+    margin: 1rem 10px;
 }
 .main__container--title {
     display: flex;
