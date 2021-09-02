@@ -102,6 +102,27 @@ function calcularAreaTriangulo() {
     alert("El área del triángulo es: " + area + "cm²");
 }
 
+function esIsosceles(ladoA, ladoB) {
+    let esIsosceles = false;
+    if (ladoA == ladoB) {
+        esIsosceles = true;
+    }
+    return esIsosceles;
+}
+
+function calcularAlturaIsosceles() {
+    let ladoA = parseInt(document.getElementById("inputLado1").value);
+    let ladoB = parseInt(document.getElementById("inputLado2").value);
+    let Base = parseInt(document.getElementById("inputBase").value);
+    if (esIsosceles(ladoA, ladoB)) {
+        let altura = Math.sqrt(Math.pow(ladoA, 2) - (Math.pow(Base, 2) / 4));
+        altura = altura.toFixed(2);
+        alert("La altura del triángulo isósceles es: " + altura + "cm");
+    } else {
+        alert("No es un triángulo isósceles");
+    }
+}
+
 //Calculando valores del Círculo
 function calcularDiametroCirculo() {
     const radio = document.getElementById("inputRadio").value;
