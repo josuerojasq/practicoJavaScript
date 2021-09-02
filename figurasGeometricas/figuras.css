@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    /* height: 100vh; */
+    flex-flow: column;
+    font-family: 'STIX Two Math', serif;
+}
+
+.header {
+    background-color: #2D2424;
+    color: #E0C097;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__title{
+    margin-right: auto;
+}
+.header img {
+    width: 5rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(#2D2424, #5C3D2E);
+    padding-top: 2rem;
+}
+.main__container {
+    background-color: rgba(224, 192, 151, 0.2);
+    border-radius: 40px;
+    border: 2px solid #E0C097;
+    color: #D47C59;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 15rem;
+    padding: 10px 50px 0;
+    width: 30rem;
+    margin: 1rem 1rem;
+}
+.main__container--title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main__container--title img {
+    width: 4rem;
+}
+.main__container--title h2{
+    text-align: center;
+}
+.main__container--form {
+    display: flex;
+    flex-direction: column;
+}
+.main__container--form label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.main__container--form span {
+    display: flex;
+    justify-content: space-between;
+}
+.form--buttons {
+    display: flex;
+    justify-content: space-around;
+}
+.container--triangulo {
+    min-height: 20rem;
+}
+.main__container--form span label{
+    margin-left: auto;
+    padding-right: 10px;
+}
+
+.first-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input {
+    background-color: transparent;
+    margin: 10px 40px;
+    border: 2px solid #E0C097;
+    border-radius: 20px;
+    color: #E0C097;
+    font-family: inherit;
+    font-size: 16px;
+    height: 30px;
+    outline: none;
+    padding: 0 20px;
+}
+::placeholder {
+    color: #E0C097;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.input__triangulo {
+    width: 200px;
+    margin: 10px 0;
+}
+
+.button {
+    background-color: rgba(224, 192, 151, 0.8);
+    border-radius: 25px;
+    border: none;
+    color: #2D2424;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+    letter-spacing: 1px;
+    margin: 10px 0;
+    padding: 0 10px;
+}
