@@ -94,3 +94,120 @@ function calcularModa(lista) {
     const moda = listaArray[listaArray.length - 1];
     return moda;
 }
+
+/**Calculo de la media aritmética ponderada
+ * Array de objetos; Cada objeto tendrá tres valores:
+ * course: nombre de la materia
+ * note: nota de la materia
+ * credit: créditos de la materia.
+*/
+const notes = [
+    {
+        course: "Educación Física",
+        note: 10,
+        credit: 2,
+    },
+    {
+        course: "Programación",
+        note: 8,
+        credit: 5,
+    },
+    {
+        course: "Finanzas personales",
+        note: 7,
+        credit: 5,
+    },
+];
+
+/** Array de solo números a partir de multiplicar cada nota con sus créditos.
+*/
+const notesWithCredit = notes.map(function (noteObject) {
+    return noteObject.note * noteObject.credit;
+});
+
+/**Suma de todos los elementos del array anterior*/
+const sumOfNotesWithCredit = notesWithCredit.reduce(
+    function (sum = 0, newVal) {
+        return sum + newVal;
+    }
+);
+
+/**Array credits únicamente con los créditos de cada materia */
+const credits = notes.map(function (noteObject) {
+    return noteObject.credit;
+});
+
+/**Suma de todos los elementos del array anterior*/
+const sumOfCredits = credits.reduce(
+    function (sum = 0, newVal) {
+        return sum + newVal;
+    }
+);
+
+/**dividir nuestras variables importantes */
+const promedioPonderadoNotasConCreditos = sumOfNotesWithCredit / sumOfCredits
+
+/** Calculo de la media geométrica*/
+function calculaMediaGeometrica(lista) {
+    /**array.includes("valor") Devuelve true si el valor esta en la lista, caso contrario devuelve false */
+    // const listaConCeros = lista.includes(0);
+
+    /**Validamos la lista con el metodo reduce(); si esta tiene algun elemento negativo o igual a cero, devuelve "false" caso contrario retorna el primer valor de la lista que es positivo*/
+    const validaRangoLista = lista.reduce(
+        function (resultado, elemento) {
+            if (resultado <= 0 || elemento <= 0) {
+                resultado = false;
+            }
+            return resultado;
+        }
+    )
+
+    if (validaRangoLista) {
+        const productoLista = lista.reduce(
+            function (resultado = 1, elemento) {
+                return resultado *= elemento;
+            }
+        );
+        
+        const raizNesima = 1 / lista.length;
+
+        const mediaGeometrica = Math.pow(productoLista, raizNesima);
+        console.group([validaRangoLista, productoLista, raizNesima]);
+        return mediaGeometrica;
+    } else {
+        return "No se puede calcular la Media Geometrica de la lista dada";
+    }
+}
+
+/** Calculo de la media geométrica*/
+function calculaMediaGeometrica(lista) {
+    /**Validamos la lista con el metodo reduce(); si esta tiene algun elemento negativo o igual a cero, devuelve "false" caso contrario retorna el primer valor de la lista que es positivo*/
+    const validaRangoLista = lista.reduce(
+        function (resultado, elemento) {
+            if (resultado <= 0 || elemento <= 0) {
+                resultado = false;
+            }
+            return resultado;
+        }
+    )
+
+    /**Preguntamos si la lista es valida */
+    if (validaRangoLista) {
+        /**Obtenemos el producto de todos los valores de la lista */
+        const productoLista = lista.reduce(
+            function (resultado = 1, elemento) {
+                return resultado *= elemento;
+            }
+        );
+        
+        /**convertimos la raiz n-ésima (Número de elementos de la lista) a potencia*/
+        const raizNesima = 1 / lista.length;
+
+        /**Calculamos la raiz n-ésima del producto de los valores por medio de la potencia*/
+        const mediaGeometrica = Math.pow(productoLista, raizNesima);
+        
+        return mediaGeometrica;
+    } else {
+        return "No se puede calcular la Media Geometrica de la lista dada";
+    }
+}
