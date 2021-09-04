@@ -1,20 +1,5 @@
-/**Obtenemos del array de objetos "country" (que esta en salarios.js) la lista de solo salarios
- * Utilizando el metodo map().
-*/
-const salariosCountry = country.map(
-    function (persona) {
-        return persona.salary;
-    }
-);
-
-/**Ordenamos la lista de salarios obtenida con el metodo sort() */
-const salariosCountrySorted = salariosCountry.sort(
-    function (salaryA, salaryB) {
-        return salaryA - salaryB;
-    }
-);
-
-/**Funcion que devuelve "true si es par" y "false si es impar" */
+/**Funciones helpers(utils)
+ * Funcion que devuelve "true si es par" y "false si es impar" */
 function esPar(numero) {
     return (numero % 2 === 0);
 }
@@ -33,6 +18,22 @@ function calcularMediaAritmetica(lista) {
     return promedioLista;
 }
 
+/**Obtenemos del array de objetos "country" (que esta en salarios.js) la lista de solo salarios
+ * Utilizando el metodo map().
+*/
+const salariosCountry = country.map(
+    function (persona) {
+        return persona.salary;
+    }
+);
+
+/**Ordenamos la lista de salarios obtenida con el metodo sort() */
+const salariosCountrySorted = salariosCountry.sort(
+    function (salaryA, salaryB) {
+        return salaryA - salaryB;
+    }
+);
+
 /**Calculamos la mediana de la lista de salarios */
 function medianaSalarios(lista) {
     const mitad = parseInt(lista.length / 2);
@@ -49,4 +50,29 @@ function medianaSalarios(lista) {
     }
 }
 
-console.log(medianaSalarios(salariosCountrySorted));
+const medianaGeneralCountry = medianaSalarios(salariosCountrySorted);
+
+/**Separar top 10% y calcular la mediana de estos
+ * Obtenemos la posicion donde inicia el 90% de la lista
+ * Obtenemos la cantidad de elementos de este 10% restante
+ */
+const spliceStart = (salariosCountrySorted.length * 90) / 100;
+const spliceCount = salariosCountrySorted.length - spliceStart;
+
+/**Obtenemos la lista del 10% deseado de la lista country 
+ * con el metodo splice "sacamos" los elementos de la lista original (Mucho Ojo!)
+ * Utilizaremos el metodo slice que no altera la lista original
+*/
+// const salariosCountryTop10 = salariosCountrySorted.splice(spliceStart, spliceCount);
+const salariosCountryTop10 = salariosCountrySorted.slice(spliceStart, salariosCountrySorted.length);
+
+const medianaTop10Country = medianaSalarios(salariosCountryTop10);
+
+console.log({
+    spliceStart,
+    spliceCount,
+    salariosCountrySorted,
+    salariosCountryTop10,
+    medianaGeneralCountry,
+    medianaTop10Country,
+});
