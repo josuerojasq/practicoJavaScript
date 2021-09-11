@@ -7,6 +7,32 @@ body {
     display: flex;
     height: 100vh;
     flex-flow: column;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-family: 'Ropa Sans', sans-serif;
+}
+
+.header {
+    background: linear-gradient( #352D4D, #6D6192);
+    color: #92E0A9;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__title{
+    margin-right: auto;
+}
+.header img {
+    width: 5rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(#6D6192, #69B0C1);
+    padding-top: 2rem;
+    height: inherit;
 }
