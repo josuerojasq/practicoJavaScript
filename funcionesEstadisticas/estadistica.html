@@ -20,7 +20,31 @@
         <a href="../index.html"><img src="./assets/arrow-back.png" alt="Volver al Inicio"></a>
     </header>
     <main class="main">
-        
+        <section class="main__container">
+            <aside class="main__container--title"><img class="main__container--title-photo" src="./assets/calculator.png" alt="calculator"/>
+                <h2>Calcular el<br />Promedio, Mediana y Moda</h2>
+            </aside>
+            <form class="main__container--form">
+                <label for="inputStatistics">Ingresa uno o m&aacute;s valores:</label>
+                <span>
+                    <input class="input" id="inputStatistics" type="text" placeholder="1, 2, 3..."/>
+                    <button class="button" type="button" onclick="location.reload();"><span class="button__image insert"></span></button>
+                </span>
+                <span>
+                <button class="button" type="button" onclick="getAverage()">Promedio</button>
+                <button class="button" type="button" onclick="getMedian()">Mediana</button>
+                <button class="button" type="button" onclick="getModa()">Moda</button>
+                <button class="button" type="button" onclick="location.reload();"><span class="button__image garbage"></span></button>
+                </span>
+                <p class="hidden" id="resultAverage"></p>
+                <p class="hidden" id="resultMedian"></p>
+                <p class="hidden" id="resultModa"></p>
+            </form>
+            <article>
+            <p>Valores actualmente cargados:</p>
+            <p class="main__container--list"></p>
+            </article>
+        </section>
     </main>
     <script src="estadistica.js"></script>
 </body>

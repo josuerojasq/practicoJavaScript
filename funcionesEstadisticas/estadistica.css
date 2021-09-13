@@ -12,7 +12,7 @@ body {
 }
 
 .header {
-    background: linear-gradient( #352D4D, #6D6192);
+    background: #352D4D;
     color: #92E0A9;
     height: 5rem;
     display: flex;
@@ -22,9 +22,14 @@ body {
 }
 .header__title{
     margin-right: auto;
+    margin-left: 2rem;
+}
+.header__title h1 {
+    font-size: 2rem;
 }
 .header img {
     width: 5rem;
+    margin-left: 1rem;
 }
 
 .main {
@@ -32,7 +37,125 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(#6D6192, #69B0C1);
+    background: linear-gradient(#352D4D, #6D6192);
     padding-top: 2rem;
     height: inherit;
+}
+.main__container {
+    background-color: rgba(105, 176, 193, 0.2);
+    border: 2px solid #69B0C1;
+    color: #92E0A9; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 27rem;
+    padding: 10px 30px 20px;
+    width: 32rem;
+    margin: 1rem 10px;
+}
+.main__container--title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main__container--title img {
+    width: 4rem;
+    margin-right: 1rem;
+}
+.main__container--title h2{
+    text-align: left;
+    margin-right: auto;
+}
+.main__container--form {
+    display: flex;
+    flex-direction: column;
+}
+.main__container--form label {
+    font-size: 18px;
+}
+.main__container--form span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main__container--list {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.input {
+    background-color: transparent;
+    border-bottom: 2px solid #69B0C1;
+    border-top: 0;
+    border-right: 2px solid #69B0C1;
+    border-left: 2px solid #69B0C1;
+    color: #92E0A9;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    height: 30px;
+    outline: none;
+    padding: 0 10px;
+    width: 25rem;
+    margin-right: 0.5rem;
+}
+.input::placeholder{
+    color: rgba(146, 224, 169,0.5);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #92E0A9;
+    
+}
+
+.button__image {
+    margin-bottom: -2px;
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.insert {
+    background-image: url(./assets/arrow-insert.png);
+}
+.garbage{
+    background-image: url(./assets/clean.png);
+}
+
+.button {
+    background-color: rgba(105, 176, 193, 0.8);
+    border-radius: 25px;
+    border: none;
+    color: #352D4D;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: bold;
+    height: 2rem;
+    letter-spacing: 1px;
+    margin: 0.5rem 0.5rem;
+    padding: 0 1rem;
+    outline: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    display: inherit !important;
+    margin-top: 1rem;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: rgba(105, 176, 193, 0.493) solid 3px;
 }
