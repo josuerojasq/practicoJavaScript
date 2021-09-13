@@ -25,24 +25,24 @@
                 <h2>Calcular el<br />Promedio, Mediana y Moda</h2>
             </aside>
             <form class="main__container--form">
-                <label for="inputStatistics">Ingresa uno o m&aacute;s valores:</label>
+                <label for="inputValores">Ingresa uno o m&aacute;s valores (Enteros):</label>
                 <span>
-                    <input class="input" id="inputStatistics" type="text" placeholder="1, 2, 3..."/>
-                    <button class="button" type="button" onclick="location.reload();"><span class="button__image insert"></span></button>
+                    <input class="input" id="inputValores" type="text" placeholder="10 25 32..."/>
+                    <button class="button" type="button" onclick="adicionarValores();"><span class="button__image insert"></span></button>
                 </span>
                 <span>
-                <button class="button" type="button" onclick="getAverage()">Promedio</button>
-                <button class="button" type="button" onclick="getMedian()">Mediana</button>
-                <button class="button" type="button" onclick="getModa()">Moda</button>
+                <button class="button" type="button" onclick="mostrarPromedio()">Promedio</button>
+                <button class="button" type="button" onclick="mostrarMediana()">Mediana</button>
+                <button class="button" type="button" onclick="mostrarModa()">Moda</button>
                 <button class="button" type="button" onclick="location.reload();"><span class="button__image garbage"></span></button>
                 </span>
-                <p class="hidden" id="resultAverage"></p>
-                <p class="hidden" id="resultMedian"></p>
+                <p class="hidden" id="resultPromedio"></p>
+                <p class="hidden" id="resultMediana"></p>
                 <p class="hidden" id="resultModa"></p>
             </form>
             <article>
             <p>Valores actualmente cargados:</p>
-            <p class="main__container--list"></p>
+            <p class="main__container--list" id="displayList"></p>
             </article>
         </section>
     </main>

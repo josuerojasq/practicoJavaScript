@@ -95,6 +95,55 @@ function calcularModa(lista) {
     return moda;
 }
 
+const listaFinal = [];
+
+function adicionarValores() {
+    const inputValorES = document.getElementById("inputValores").value;
+    const displayList = document.getElementById("displayList");
+    const listaValorES = inputValorES.split(' ');
+    listaValorES.map(
+        function (valor) {
+            valor = parseInt(valor);
+            if (!Number.isNaN(valor)) {
+                listaFinal.push(valor);
+            }
+        }
+    );
+    displayList.innerHTML = `${listaFinal}`;
+    limpiarPantalla();
+}
+
+function mostrarPromedio() {
+    const resultPromedio = document.getElementById("resultPromedio");
+    const promedio = calcularMediaAritmetica(listaFinal);
+    resultPromedio.innerHTML = `Promedio: ${promedio.toFixed(2)}`;
+    resultPromedio.classList.add('show');
+}
+
+function mostrarMediana() {
+    const resultMediana = document.getElementById("resultMediana");
+    const mediana = calcularMediana(listaFinal);
+    resultMediana.innerHTML = `Mediana: ${mediana.toFixed(2)}`;
+    resultMediana.classList.add('show');
+}
+
+function mostrarModa() {
+    const resultModa = document.getElementById("resultModa");
+    const moda = calcularModa(listaFinal);
+    resultModa.innerHTML = `Moda: ${moda[0]} - ${moda[1]} veces`;
+    resultModa.classList.add('show');
+}
+
+function limpiarPantalla() {
+    const inputValorES = document.getElementById("inputValores");
+    const resultPromedio = document.getElementById("resultPromedio");
+    const resultMediana = document.getElementById("resultMediana");
+    const resultModa = document.getElementById("resultModa");
+    inputValorES.value = '';
+    resultPromedio.classList.remove('show');
+    resultMediana.classList.remove('show');
+    resultModa.classList.remove('show');
+}
 /**Calculo de la media aritmética ponderada
  * Array de objetos; Cada objeto tendrá tres valores:
  * course: nombre de la materia

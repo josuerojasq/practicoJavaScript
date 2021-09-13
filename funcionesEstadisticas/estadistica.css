@@ -48,7 +48,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    min-height: 27rem;
+    /* min-height: 27rem; */
+    height: auto;
     padding: 10px 30px 20px;
     width: 32rem;
     margin: 1rem 10px;
@@ -69,6 +70,7 @@ body {
 .main__container--form {
     display: flex;
     flex-direction: column;
+    padding-top: 1rem;
 }
 .main__container--form label {
     font-size: 18px;
@@ -81,6 +83,7 @@ body {
 .main__container--list {
     font-size: 1.5rem;
     font-weight: bold;
+    word-wrap: break-word;
 }
 
 .input {
